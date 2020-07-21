@@ -23,6 +23,17 @@
  */
 function fibonacci(n) {
   // This is your job. :)
+  let current = 0;
+  let next = 1;
+
+  return fibHelper(current, next, n);
+}
+
+function fibHelper(a, b, n) {
+  if(n === 0) {
+    return a;
+  }
+  return fibHelper(b, a + b, n-1);
 }
 
 if (require.main === module) {
@@ -30,6 +41,9 @@ if (require.main === module) {
 
   // Add your own sanity checks here.
   // How else will you be sure your code does what you think it does?
+  console.log(fibonacci(0) === 0);
+  console.log(fibonacci(1) === 1);
+  console.log(fibonacci(7) === 13);
 }
 
 module.exports = fibonacci;

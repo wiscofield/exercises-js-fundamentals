@@ -24,15 +24,16 @@
 function isPowerOf(num, base) {
   // Your code here
   // Remember, you can assume that num is a positive integer.
+  return num % base === 0;
 }
 
 if (require.main === module) {
   console.log('Running sanity checks for isPowerOf:');
 
   // Is 0 a power of two? Is 1?
-  // console.log(isPowerOf(0, 2) === _____);
-  // console.log(isPowerOf(1, 2) === _____);
-  // console.log(isPowerOf(1, 3) === _____);
+  console.log(isPowerOf(0, 2) === true);
+  console.log(isPowerOf(1, 2) === false);
+  console.log(isPowerOf(1, 3) === false);
 
   console.log(isPowerOf(2 ** 4, 2) === true);
   console.log(isPowerOf(2 ** 4 + 1, 2) === false);
